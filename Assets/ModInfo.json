@@ -1,0 +1,16 @@
+{
+    "name": "Base Mod",
+    "author": "SteffTek",
+    "version": "0.0.1",
+    "dependencies": [],
+    "map": {
+            "name": "The Sample",
+            "description": "A simple sample.",
+            "gamemodes": ["TDM","FFA","TTT"],
+            "path": "Assets/Scenes/SampleScene.unity"
+        },
+    "gamemode": {
+        "name": "TTT",
+        "path": "Assets/GameMode/TTT_Manager.prefab"
+    }
+}
