@@ -18,17 +18,17 @@ The following attributes contribute to the JSON file.
 | **version**      | string        | Mod Version                                                                                     | 0.0.1                |
 | **thumbnail**    | string        | Path to the Thumbnail inside the assets folder.                                                 | Assets/Thumbnail.png |
 | **dependencies** | Array[string] | A list of IDs that are neccessary for this mod to work. Without these, the mod won't be loaded. | ["00001","00002"]    |
-| **map**          | Map           | See [Map Definition](#Map%20Definition)                                                         |                      |
-| **gamemode**     | Game Mode     | See [Gamemode Defintion](#GameMode%20Definition)                                                |                      |
-## Map Definition
+| **map**          | Map           | See [Map Definition](#Map-Definition)                                                           |                      |
+| **gamemode**     | Game Mode     | See [Gamemode Defintion](#GameMode-Definition)                                                  |                      |
+### Map Definition
 | Attribute       | Type          | Description                                                                      | Example                        |
 |-----------------|---------------|----------------------------------------------------------------------------------|--------------------------------|
 | **name**        | string        | The name of your map in the map viewer.                                          | The Sample                     |
 | **description** | string        | A description of your map for the loading screen.                                | A simple sample.               |
-| **gamemodes**   | Array[string] | All gamemodes available with your map. See [Valid Gamemodes](#Valid%20Gamemodes) | ["TDM","FFA"]                  |
-| **mobs**        | Array[string] | The mobs your map will be able to spawn. See [Valid Mobs](#Valid%20Mobs)         | ["FireSlime"]                  |
+| **gamemodes**   | Array[string] | All gamemodes available with your map. See [Valid Gamemodes](#Valid-Gamemodes)   | ["TDM","FFA"]                  |
+| **mobs**        | Array[string] | The mobs your map will be able to spawn. See [Valid Mobs](#Valid-Mobs)           | ["FireSlime"]                  |
 | **path**        | string        | The path to your Unity Scene.                                                    | Assets/Scene/SampleScene.unity |
-## GameMode Definition
+### GameMode Definition
 This is currently not viable.
 
 ### Valid GameModes
