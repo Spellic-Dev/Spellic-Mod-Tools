@@ -29,8 +29,8 @@ MonoBehaviour:
   m_ContiguousBundles: 1
   m_StripUnityVersionFromBundleBuild: 0
   m_DisableVisibleSubAssetRepresentations: 0
-  m_ShaderBundleNaming: 0
-  m_ShaderBundleCustomNaming: 
+  m_ShaderBundleNaming: 2
+  m_ShaderBundleCustomNaming: SpellicMod
   m_MonoScriptBundleNaming: 3
   m_MonoScriptBundleCustomNaming: SpellicMod
   m_RemoteCatalogBuildPath:
@@ -57,9 +57,9 @@ MonoBehaviour:
       - m_Id: 554ae4a2fbf2a424d9d8f064f9b0024f
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: c01a45971d431564698c8e0e5aff9195
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+        m_Value: D:/Unity/Spellic Modding/Assets/Export/StandaloneWindows64
       - m_Id: 60e57ae44f234ca459b529ac3faa34b9
-        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+        m_Value: '{LOCAL_MOD_PATH}'
       - m_Id: 3892e688799bf664282accd3a9a86b00
         m_Value: ServerData/[BuildTarget]
       - m_Id: fb983604325a69d43af7970234c363aa
@@ -85,6 +85,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Map
+    - Thumbnail
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 6b665aa36706e544b871baca467bd0cc, type: 2}
