@@ -9,7 +9,9 @@ namespace MapUtils
         None,
         Blue,
         Red,
-        Mob
+        Mob,
+        RedFlag,
+        BlueFlag
     }
     public class SpellicMapSpawnPoint : MonoBehaviour
     {
@@ -31,6 +33,12 @@ namespace MapUtils
                     break;
                 case SpellicSpawnTeam.Mob:
                     c = Color.green;
+                    break;
+                case SpellicSpawnTeam.RedFlag:
+                    c = Color.magenta;
+                    break;
+                case SpellicSpawnTeam.BlueFlag:
+                    c = Color.cyan;
                     break;
             }
 

@@ -4,6 +4,7 @@ Spellic is a 2.5D Wizard Shooter. This is the official modding repository. Curre
 ## Requirements
 - Unity Version 2021.3.10f1
 - This repository
+- To publish your Mod, you need to download the `Spellic Workshop Tools` in your Steam Library.
 
 ## Map Utils
 We provide many different utility classes for map creation, which we will develop further with ongoing development of Spellic. Most of these classes and tools are the same ones that we use to create built in maps, however we cannot guarantee that every tool that we build will be available as a utility class for creating maps.
