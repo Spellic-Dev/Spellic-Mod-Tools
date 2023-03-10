@@ -47,6 +47,9 @@ namespace ModBuilder {
 
             if(GUILayout.Button("Build Mod", GUILayout.Height(40)))
             {
+                // Read JSON again
+                ReadJSON();
+
                 // TODO: Validate problably
 
                 // Check Path
