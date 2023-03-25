@@ -37,7 +37,7 @@ namespace ModBuilder {
             ReadJSON();
         }
 
-        #region GUI
+#region GUI
         private void OnGUI()
         {
             if(GUILayout.Button("Create Thumbnail", GUILayout.Height(40)))
@@ -63,9 +63,9 @@ namespace ModBuilder {
                 EditorUtility.RevealInFinder(exportPath);
             }
         }
-        #endregion
+#endregion
 
-        #region Export
+#region Export
         void Config()
         {
             if (!File.Exists(exportPath)) CreateFolder(exportPath);
@@ -88,6 +88,14 @@ namespace ModBuilder {
             EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.StandaloneLinux64;
 
             // Export Linux
+            Bundle();
+
+            // Switch to MacOSX
+            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX);
+            EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.StandaloneOSX;
+            //EditorUserBuildSettings.SetPlatformSettings("Standalone", "OSX", "Architecture", "x64ARM64");
+
+            // Export
             Bundle();
         }
 
@@ -153,9 +161,9 @@ namespace ModBuilder {
             e.SetLabel(label, true, true, false);
             return e;
         }
-        #endregion
+#endregion
 
-        #region Utils
+#region Utils
         public string FormatPath(string path)
         {
             return path.Replace(@"\", "/");
@@ -201,7 +209,7 @@ namespace ModBuilder {
             File.WriteAllBytes(path, byteArray);
             AssetDatabase.Refresh();
         }
-        #endregion
+#endregion
     }
 
     [System.Serializable]
