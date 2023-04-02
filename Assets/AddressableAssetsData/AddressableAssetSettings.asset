@@ -57,7 +57,7 @@ MonoBehaviour:
       - m_Id: 554ae4a2fbf2a424d9d8f064f9b0024f
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: c01a45971d431564698c8e0e5aff9195
-        m_Value: D:/Unity/Spellic Modding/Assets/Export/StandaloneWindows64
+        m_Value: D:/Unity/Spellic Modding/Assets/Export/StandaloneOSX
       - m_Id: 60e57ae44f234ca459b529ac3faa34b9
         m_Value: '{LOCAL_MOD_PATH}'
       - m_Id: 3892e688799bf664282accd3a9a86b00
