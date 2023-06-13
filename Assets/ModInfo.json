@@ -2,7 +2,7 @@
     "name": "My Mod",
     "author": "John Doe",
     "version": "1.0.0",
-    "gameVersion": "1.16.5",
+    "gameVersion": "0.4.0",
     "thumbnail": "Assets/Thumbnail.png",
     "dependencies": [],
     "map": {
