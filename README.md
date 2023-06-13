@@ -29,7 +29,7 @@ The **MOST IMPORTANT** utility. Unity has a bug, where your map won't render cor
 Your Map needs to have **exactly one** Main Camera, and it has to be tagged as one.
 ## Mod Info JSON
 The ModInfo JSON is bundled inside your mod folder and used for metadata and asset loading.
-You can read about the ModInfo JSON [here](docs/0.4.0/JSON_API_0.4.0.md).
+You can read about the ModInfo JSON [here](docs/0.4.0/Json_API_0.4.0.md).
 ### Supported API Versions
 A list of all supported API Versions can be found [here](docs/API_VERSIONS.md).
 
