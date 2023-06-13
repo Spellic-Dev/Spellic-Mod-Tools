@@ -132,6 +132,12 @@ namespace ModBuilder {
             }
 
             // TODO: GameModeManager
+            // Add GameModeFile
+            var gameModeFileGUID = AssetDatabase.AssetPathToGUID(modInfo.gamemode.path);
+            if(gameModeFileGUID != null)
+            {
+                entries.Add(AddEntry(gameModeFileGUID, group, "GameModeFile"));
+            }
 
             // Add Entries
             group.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, entries, false, true);
@@ -213,15 +219,16 @@ namespace ModBuilder {
     }
 
     [System.Serializable]
-    class ModInfo
+    public class ModInfo
     {
         public string name;
         public string author;
         public string version;
+        public string gameVersion;
         public string thumbnail;
         public string[] dependencies;
-        public Map map;
-        public GameMode gamemode;
+        public ModMap map;
+        public ModGameMode gamemode;
 
         public static ModInfo FromJSON(string json)
         {
@@ -230,20 +237,43 @@ namespace ModBuilder {
     }
 
     [System.Serializable]
-    class Map
+    public class ModMap
     {
         public string name;
         public string description;
         public string[] gamemodes;
-        public string[] mobs;
+        public MapMob[] mobs;
         public string path;
+        public MapSettings settings;
     }
 
     [System.Serializable]
-    class GameMode
+    public class MapSettings
+    {
+        public float gravityMultiplier = 1;
+        public float contrastLevel = 1;
+    }
+
+    [System.Serializable]
+    public class ModGameMode
     {
         public string name;
         public string path;
+        public bool teamBased;
+        public bool allowMobs;
+        public bool hasDifficulty;
+        public bool hasRounds;
+        public bool hasRoundTime;
+        public string compatible;
+        public int[] rounds;
+        public int[] roundTimes;
+    }
+
+    [System.Serializable]
+    public class MapMob
+    {
+        public string name;
+        public float spawnChance;
     }
 }
 #endif

@@ -1,0 +1,121 @@
+// Game Variables
+blue_score = 0
+red_score = 0
+
+// Timings
+round_start = 5
+round_end = 10
+round_time = 0
+
+// Timer
+current_time = 0
+
+OnGameStart = function(args)
+    // Get Settings
+    settings = GetGameSettings()
+    // Set Round Time
+    globals.round_time = settings.roundTime
+    // Set Scores
+    SetPoints(blue_score, red_score)
+    // Spawn Players
+    RespawnPlayers(true)
+    SpawnMobs()
+    // Start Round
+    StartRound()
+end function
+
+OnRoundStart = function(args)
+    // Set Timer
+    globals.current_time = round_start
+    // Set GameState to ROUNDRUNNING after round_start, then start timer
+    timer = function()
+        // Allow Movement
+        EnableMovement()
+        ChangeGameState(ROUNDRUNNING)
+        globals.current_time = globals.round_time
+        // Wait for round to end
+        WaitForSeconds(round_time, @EndRound)
+    end function
+    // Start Timer
+    WaitForSeconds(round_start, @timer)
+end function
+
+OnRoundEnd = function(args)
+    // Immediatly End Game
+    EndGame()
+end function
+
+OnGameEnd = function(args)
+    // Show Top Players
+    ShowBestPlayers()
+    // Announce Winner
+    if blue_score > red_score then
+        ShowWinner(TEAM_BLUE,"0000FF")
+    else if red_score > blue_score then
+        ShowWinner(TEAM_RED,"FF0000")
+    else
+        ShowWinner(DRAW,"FFFFFF")
+    end if
+    // Wait 10 Seconds, then return back to lobby
+    WaitForSeconds(10, @ReturnToLobby)
+end function
+
+OnUpdate = function(args)
+    // Get Delta
+    delta = args.delta
+    // If GAMEEND => return
+    if GetGameState() == GAMEEND then
+        return false
+    end if
+    // Update Timer
+    globals.current_time = globals.current_time - delta
+    // Calculate Time in 00:00 format
+    minutes = floor(globals.current_time / 60)
+    seconds = floor(globals.current_time % 60)
+    // Add leading 0
+    if minutes < 10 then
+        minutes = "0" + minutes
+    end if
+    if seconds < 10 then
+        seconds = "0" + seconds
+    end if
+    // Set Timer
+    SetTimer(minutes + ":" + seconds)
+    // If timer < 10 && GameState == ROUNDRUNNING
+    if globals.current_time < 10 and GetGameState() == ROUNDRUNNING then
+        // Set state to ROUNDFINALE
+        ChangeGameState(ROUNDFINALE)
+    end if
+end function
+
+OnPlayerDeath = function(args)
+    print("Player " + args.victim.playerId + " died")
+    // Respawn Player
+    respawn = function()
+        // Check if ROUNDRUNNING or ROUNDFINALE
+        if GetGameState() == ROUNDRUNNING or GetGameState() == ROUNDFINALE then
+            // Respawn Player
+            RespawnPlayer(args.victim.playerId, true)
+        end if
+    end function
+    WaitForSeconds(5, @respawn);
+    // Add Death
+    AddDeath(args.victim.playerId)
+    // Check if killer is null
+    if args.killer == null then
+        ShowKillFeed(args.victim.playerId)
+        return false
+    end if
+    // Show Kill Feed
+    ShowKillFeed(args.victim.playerId, args.killer.playerId)
+    // Add Kill
+    AddKill(args.killer.playerId)
+    // Update Score
+    if args.killer.team == "blue" then
+        blue_score = blue_score + 1
+    else
+        red_score = red_score + 1
+    end if
+    // Set Score
+    SetPoints(blue_score, red_score)
+end function

@@ -25,39 +25,20 @@ You can trigger sounds if something enters these triggers, and the sound will be
 Same as Floating Objects, but rotating.
 #### - SpellicShaderFixer
 The **MOST IMPORTANT** utility. Unity has a bug, where your map won't render correctly. With the shader fixer appended to any root object, all objects inside this root object will have their shaders "fixed". This object sets the shader you used to the shader found inside the games runtime. I cannot confirm if custom shaders work.
-
-## Caveats
+### Caveats
 Your Map needs to have **exactly one** Main Camera, and it has to be tagged as one.
-
 ## Mod Info JSON
 The ModInfo JSON is bundled inside your mod folder and used for metadata and asset loading.
-The following attributes contribute to the JSON file.
-| Attribute        | Type          | Description                                                                                     | Example              |
-|------------------|---------------|-------------------------------------------------------------------------------------------------|----------------------|
-| **name**         | string        | The Name of the mod you are creating.                                                           | Example Mod          |
-| **author**       | string        | The name of the original author (you).                                                          | SteffTek             |
-| **version**      | string        | Mod Version                                                                                     | 0.0.1                |
-| **thumbnail**    | string        | Path to the Thumbnail inside the assets folder.                                                 | Assets/Thumbnail.png |
-| **dependencies** | Array[string] | A list of IDs that are neccessary for this mod to work. Without these, the mod won't be loaded. | ["00001","00002"]    |
-| **map**          | Map           | See [Map Definition](#Map-Definition)                                                           |                      |
-| **gamemode**     | Game Mode     | See [Gamemode Defintion](#GameMode-Definition)                                                  |                      |
-### Map Definition
-| Attribute       | Type          | Description                                                                      | Example                        |
-|-----------------|---------------|----------------------------------------------------------------------------------|--------------------------------|
-| **name**        | string        | The name of your map in the map viewer.                                          | The Sample                     |
-| **description** | string        | A description of your map for the loading screen.                                | A simple sample.               |
-| **gamemodes**   | Array[string] | All gamemodes available with your map. See [Valid Gamemodes](#Valid-Gamemodes)   | ["TDM","FFA"]                  |
-| **mobs**        | Array[string] | The mobs your map will be able to spawn. See [Valid Mobs](#Valid-Mobs)           | ["FireSlime"]                  |
-| **path**        | string        | The path to your Unity Scene.                                                    | Assets/Scene/SampleScene.unity |
-### GameMode Definition
-This is currently not viable.
+You can read about the ModInfo JSON [here](docs/0.4.0/JSON_API_0.4.0.md).
+### Supported API Versions
+A list of all supported API Versions can be found [here](docs/API_VERSIONS.md).
 
 ### Valid GameModes
-Since you currently cannot create your own game modes you have to rely on the given ones.
+Your map can be compatible with many different game modes. If you have a **custom game mode**, you can add the modId to the list of valid game modes. If you don't, you can use the following list of built in game modes:
 - TDM
 - FFA
 - CTF
-- PvE
+- PVE
 
 ### Valid Mobs
 Currently available mobs are:
@@ -65,6 +46,8 @@ Currently available mobs are:
 - VoidSlime
 - FireSlime
 - Skeleton
+- Zombie
+- CryptoBro
 
 ## Mirror
 Mirror is the Networking Library of Spellic. We use Mirror for synchronizing data between clients and servers. Some scripts need Mirror and the Network Identity Component and will attach it on apply.

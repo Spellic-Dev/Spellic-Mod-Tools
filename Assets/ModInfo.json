@@ -1,14 +1,51 @@
 {
-    "name": "Base Mod",
-    "author": "SteffTek",
-    "version": "0.0.1",
+    "name": "My Mod",
+    "author": "John Doe",
+    "version": "1.0.0",
+    "gameVersion": "1.16.5",
     "thumbnail": "Assets/Thumbnail.png",
     "dependencies": [],
     "map": {
-        "name": "The Sample",
-        "description": "A simple sample.",
-        "gamemodes": ["TDM","FFA"],
-        "mobs": ["FireSlime","VoidSlime","Skeleton","Rat","Zombie"],
-        "path": "Assets/Scene/SampleScene.unity"
+        "name": "My Map",
+        "description": "This is my map",
+        "gamemodes": [
+            "TDM",
+            "FFA"
+        ],
+        "mobs": [
+            {
+                "name": "FireSlime",
+                "spawnChance": 0.5
+            },
+            {
+                "name": "Skeleton",
+                "spawnChance": 0.3
+            }
+        ],
+        "path": "Assets/Scene/SampleScene.unity",
+        "settings": {
+            "gravityMultiplier": 1.5,
+            "contrastLevel": 1
+        }
+    },
+    "gamemode": {
+        "name": "My Game Mode",
+        "path": "Assets/GameMode/CustomTDM.txt",
+        "teamBased": true,
+        "allowMobs": true,
+        "hasDifficulty": false,
+        "hasRounds": false,
+        "hasRoundTime": true,
+        "compatible": "TDM",
+        "rounds": [
+            1,
+            2,
+            3
+        ],
+        "roundTimes": [
+            60,
+            120,
+            180
+        ]
     }
 }
