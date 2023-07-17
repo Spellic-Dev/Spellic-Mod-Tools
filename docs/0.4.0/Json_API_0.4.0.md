@@ -20,7 +20,7 @@ It is used by the game to display information about the mod in the mod menu and 
 | `map` | `object` | An object containing information about the map that the mod adds. |
 | `map.name` | `string` | The name of the map. |
 | `map.description` | `string` | A description of the map. |
-| `map.gamemodes` | `array of strings` | An array of game modes that the map is compatible with. |
+| `map.gamemodes` | `array of strings` | An array of game modes that the map is compatible with. Gamemode Names for built-in modes, Mod IDs for custom gamemodes. |
 | `map.mobs` | `array of objects` | An array of mobs that can spawn in the map. |
 | `map.mobs.name` | `string` | The name of the mob. |
 | `map.mobs.spawnChance` | `float` | The chance of the mob spawning. |
