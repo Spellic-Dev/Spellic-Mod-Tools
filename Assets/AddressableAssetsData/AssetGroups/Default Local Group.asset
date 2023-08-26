@@ -16,22 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 05e42682946fbb14c9a82bed72fbdf3f
-  m_SerializeEntries:
-  - m_GUID: 8b450ab4ae1761c42aea0b5adab64a05
-    m_Address: Assets/GameMode/CustomTDM.txt
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - GameModeFile
-  - m_GUID: e7f0f6c460b44a64583d2c19582cd39c
-    m_Address: Assets/Thumbnail.png
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Thumbnail
-  - m_GUID: 99c9720ab356a0642a771bea13969a05
-    m_Address: Assets/Scene/SampleScene.unity
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Map
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 04b404a7c10ebdf40a19274810525fa7, type: 2}
   m_SchemaSet:

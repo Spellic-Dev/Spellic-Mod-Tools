@@ -40,6 +40,32 @@ This is asynchronous, so the game will continue to run while this is waiting.
 | `seconds` | `ValNumber` | `0` | Yes |
 | `callback` | `@Function` | `nil` | Yes |
 
+### Output
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `id` | `ValNumber` | The id of the async callback. |
+
+---
+
+## `CancelWait(id: ValNumber)`
+
+This function will cancel the async callback with the specified id.
+
+### Parameters
+
+| Name | Type | Default Value | Required |
+| --- | --- | --- | --- |
+| `id` | `ValNumber` | | Yes |
+
+### Output
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `success` | `bool` | Whether the callback was cancelled. |
+
+---
+
 ### Important Notes
 
 - Functions in Miniscript will always be executed on call, so you have to pass your function with a leading `@` to make it a function reference.

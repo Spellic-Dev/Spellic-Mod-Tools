@@ -69,6 +69,10 @@ OnUpdate = function(args)
     end if
     // Update Timer
     globals.current_time = globals.current_time - delta
+    // If Timer < 0 => set to 0
+    if globals.current_time < 0 then
+        globals.current_time = 0
+    end if
     // Calculate Time in 00:00 format
     minutes = floor(globals.current_time / 60)
     seconds = floor(globals.current_time % 60)
@@ -112,9 +116,9 @@ OnPlayerDeath = function(args)
     AddKill(args.killer.playerId)
     // Update Score
     if args.killer.team == "blue" then
-        blue_score = blue_score + 1
-    else
-        red_score = red_score + 1
+        globals.blue_score = globals.blue_score + 1
+    else if args.killer.team == "red" then
+        globals.red_score = globals.red_score + 1
     end if
     // Set Score
     SetPoints(blue_score, red_score)

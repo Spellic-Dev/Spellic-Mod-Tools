@@ -145,3 +145,17 @@ A conveyor belt that can be used to move players, mobs and props.
 | `direction` | `Vector3` | Vector3.forward | The direction of the conveyor. |
 | `speed` | `float` | 1f | The speed of the conveyor. |
 | `propForce` | `float` | 1f | The speed of the conveyor for props. |
+
+---
+
+## `SpellicCameraAnchor`
+
+An anchor for the camera. This is used to set the camera position and rotation.
+
+Can be used for dynamic camera positions by disabling the anchor and enabling it when needed.
+
+### Parameters
+
+| Name | Type | Default Value | Description |
+| --- | --- | --- | --- |
+| `lookPosition` | `Vector3` | 0,0,0 | The position the camera should look at. |
