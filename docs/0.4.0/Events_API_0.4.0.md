@@ -120,6 +120,20 @@ This event is called when a mob dies.
 
 ---
 
+## `OnMobDamage()`
+
+This event is called when a mob is damaged.
+
+### Arguments
+
+| Name | Type | Always Set |
+| --- | --- | --- |
+| `victim` | `ValMap` | Yes |
+| `attacker` | `ValMap` | No |
+| `damage` | `ValNumber` | Yes |
+
+---
+
 ## `OnPlayerLeave()`
 
 This event is called when a player leaves the game.
