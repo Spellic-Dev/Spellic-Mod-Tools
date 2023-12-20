@@ -128,7 +128,7 @@ This event is called when a mob is damaged.
 
 | Name | Type | Always Set |
 | --- | --- | --- |
-| `victim` | `ValMap` | Yes |
+| `mob` | `ValMap` | Yes |
 | `attacker` | `ValMap` | No |
 | `damage` | `ValNumber` | Yes |
 
