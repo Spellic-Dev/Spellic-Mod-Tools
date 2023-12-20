@@ -476,3 +476,20 @@ This function damages a specific player.
 ### Output
 
 - `None`
+
+---
+
+## `AddAverageDamage(playerId: ValString, damage: ValNumber)`
+
+This function adds average damage to a player. Average damage is reset after the game and calculated every round.
+
+### Parameters
+
+| Name | Type | Default Value | Required |
+| --- | --- | --- | --- |
+| `playerId` | `ValString` | | Yes |
+| `damage` | `ValNumber` | | Yes |
+
+### Output
+
+- `None`
